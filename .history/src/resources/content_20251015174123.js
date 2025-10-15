@@ -48,11 +48,22 @@ const social = [
 
 const home = {
   path: "/",
+  image: "/images/og/home.jpg",
   label: "Home",
-  title: `Ramla's Portfolio`,
-  description: `Portfolio website showcasing my work as a Creative Technologist`,
-  headline: <>builder at the intersection of tech and creativity</>,
-
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Building bridges between design and code</>,
+  featured: {
+    display: true,
+    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    href: "/work/building-once-ui-a-customizable-design-system",
+  },
+  subline: (
+    <>
+      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
+      <br /> user experiences. After hours, I build my own projects.
+    </>
+  ),
 };
 
 const about = {

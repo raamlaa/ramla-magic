@@ -53,6 +53,7 @@ const home = {
   description: `Portfolio website showcasing my work as a Creative Technologist`,
   headline: <>builder at the intersection of tech and creativity</>,
 
+
 };
 
 const about = {
