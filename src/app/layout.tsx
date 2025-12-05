@@ -44,7 +44,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const defaultTheme = 'light';
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -65,20 +65,10 @@ export default async function RootLayout({
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
+                  // Always use light theme
+                  root.setAttribute('data-theme', 'light');
                   
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
+                  // Apply any saved style overrides (but not theme)
                   const styleKeys = Object.keys(config);
                   styleKeys.forEach(key => {
                     const value = localStorage.getItem('data-' + key);
@@ -88,7 +78,7 @@ export default async function RootLayout({
                   });
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
                 }
               })();
             `,
