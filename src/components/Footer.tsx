@@ -42,7 +42,7 @@ export const Footer = () => {
           )}
         </Flex>
       </Flex>
-      <Flex height="80" show="s"></Flex>
+      <Flex height="80" className="s-flex-show"></Flex>
     </Flex>
   );
 };

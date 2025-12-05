@@ -52,7 +52,12 @@ const home = {
   title: `Ramla's Portfolio`,
   description: `Portfolio website showcasing my work as a Creative Technologist`,
   headline: <>builder at the intersection of tech and creativity</>,
-
+  subline: <>🎮 Gaming YouTuber | 🚀 Project Manager @ TAWA | 👩‍💻 Creative Technologist</>,
+  featured: {
+    display: false,
+    title: "",
+    href: ""
+  }
 };
 
 const about = {
@@ -72,16 +77,10 @@ const about = {
     link: "https://cal.com/raamlaa/30min",
   },
   intro: {
-    display: true,
+    display: false,
     title: "Introduction",
     description: (
       <>
-      🎮 Gaming YouTuber | 🚀 Project Manager @ TAWA | 👩‍💻 Creative Technologist<br />
-      Hey, Im Ramla. A storyteller, strategist, and builder at the intersection of tech and creativity.<br />
-      <br />
-      Total experience: ~4 years<br />
-        – 2 years of professional experience (Project Manager, Content Lead, etc.)<br />
-        – 2 years in marketing and content creation through extracurricular activities
       </>
     ),
   },
@@ -89,32 +88,38 @@ const about = {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
-            {
+      {
+        company: "Raffiti Media",
+        timeframe: "10/2025 - Present",
+        role: "Strategist",
+        achievements: [
+          <>
+            Developing content strategies and creative campaigns for digital media projects.
+          </>,
+          <>
+            Collaborating with creators and brands to optimize content performance and audience engagement.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: (
           <a href="https://www.tawa.digital" target="_blank" rel="noopener noreferrer">
             TAWA Digital Talents
           </a>
         ),
-        timeframe: "11/2024 - Present",
+        timeframe: "11/2024 - 11/2025",
         role: "Project Manager",
         achievements: [
           <>
-            Designed and developed key features for "Content Factory," including the UGC Creator Toolbox, the platform’s first AI-powered 
-Media Kit, and the Highlighted Creators module. 
+            Designed and developed key features for "Content Factory," including the UGC Creator Toolbox, the platform's first AI-powered
+Media Kit, and the Highlighted Creators module.
           </>,
           <>
             Led independent projects like the Samy Chaffai Masterclass and the TAWA agency website.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   // src: "/images/projects/project-01/cover-01.jpg",
-          //   // alt: "Once UI Project",
-          //   // width: 16,
-          //   // height: 9,
-          // },
-        ],
+        images: [],
       },
       {
         company: (
@@ -129,7 +134,7 @@ Media Kit, and the Highlighted Creators module.
             Turned raw ideas, scripts, and footage into high-performing, platform-native content. I lead Short and Long content strategy, organize creator assets, pitch concepts and series And write hooks and captions.
           </>,
           <>
-            Guided the editorial flow from ideation to publishing all while aligning with the creator’s voice and growth goals.
+            Guided the editorial flow from ideation to publishing all while aligning with the creator's voice and growth goals.
           </>,
         ],
         images: [
@@ -146,7 +151,7 @@ Media Kit, and the Highlighted Creators module.
             width: 16,
             height: 9,
           },
-                    
+
           {
             src:"/images/gallery/Bali 1.png",
             alt: "KoussayBiz Project",

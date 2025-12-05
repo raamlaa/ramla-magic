@@ -1,5 +1,5 @@
 import { getPosts } from "@/utils/utils";
-import { Column } from "@once-ui-system/core";
+import { Column, Heading, Grid } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
 
 interface ProjectsProps {
@@ -18,20 +18,36 @@ export function Projects({ range }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
-      {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
-        />
-      ))}
+    <Column fillWidth marginBottom="40">
+      {/* Projects Grid */}
+      {displayedProjects.length > 0 && (
+        <Column fillWidth gap="m" paddingX="l">
+          <Heading as="h2" variant="display-strong-s" marginBottom="s">
+            Projects
+          </Heading>
+          <Grid columns="2" mobileColumns="1" tabletColumns="2" fillWidth gap="l">
+            {displayedProjects.map((post, index) => (
+              <ProjectCard
+                priority={index < 2}
+                key={post.slug}
+                href={`work/${post.slug}`}
+                images={post.metadata.images}
+                title={post.metadata.title}
+                description={post.metadata.summary}
+                content={post.content}
+                avatars={
+                  post.metadata.team?.map((member) => ({ src: member.avatar })) ||
+                  []
+                }
+                link={post.metadata.link || ""}
+                category={post.metadata.tag}
+                tags={post.metadata.tags}
+                comparison={false}
+              />
+            ))}
+          </Grid>
+        </Column>
+      )}
     </Column>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run sanity:migrate:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(timeout /t 5)",
+      "Bash(curl:*)",
+      "Bash(npx sanity:*)",
+      "Bash(echo:*)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -11,7 +11,7 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.3.1",
-    "@once-ui-system/core": "^1.2.4",
+    "@once-ui-system/core": "1.2.4",
     "@vercel/analytics": "^1.5.0",
     "classnames": "^2.5.1",
     "cookie": "^1.0.2",
@@ -30,6 +30,7 @@
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "eslint": "^9.25.0",
+    "eslint-config-next": "^16.0.6",
     "typescript": "^5.8.3"
   }
 }
