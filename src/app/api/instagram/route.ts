@@ -29,9 +29,7 @@ async function extractImageUrl(postUrl: string): Promise<string | null> {
   }
 
   if (match?.[1]) {
-    const imageUrl = match[1]
-      .replace(/\\u0026/g, "&")
-      .replace(/&amp;/g, "&");
+    const imageUrl = match[1].replace(/\\u0026/g, "&").replace(/&amp;/g, "&");
 
     imageCache.set(postUrl, { url: imageUrl, fetchedAt: Date.now() });
     return imageUrl;
@@ -53,7 +51,7 @@ export async function GET(request: NextRequest) {
     if (!imageUrl) {
       return NextResponse.json(
         { error: "Could not extract image" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -69,7 +67,7 @@ export async function GET(request: NextRequest) {
     if (!imgRes.ok) {
       return NextResponse.json(
         { error: "Image fetch failed" },
-        { status: imgRes.status }
+        { status: imgRes.status },
       );
     }
 
@@ -85,9 +83,6 @@ export async function GET(request: NextRequest) {
     });
   } catch (err) {
     console.error("Instagram fetch error:", err);
-    return NextResponse.json(
-      { error: "Failed to fetch" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch" }, { status: 500 });
   }
 }

@@ -58,7 +58,13 @@ export const Header = () => {
 
   return (
     <>
-      <Fade className="s-flex-hide" fillWidth position="fixed" height="80" zIndex={9} />
+      <Fade
+        className="s-flex-hide"
+        fillWidth
+        position="fixed"
+        height="80"
+        zIndex={9}
+      />
       <Fade
         className="s-flex-show"
         fillWidth
@@ -85,7 +91,9 @@ export const Header = () => {
           vertical="center"
           textVariant="body-default-s"
         >
-          {display.location && <Flex className="s-flex-hide">{person.location}</Flex>}
+          {display.location && (
+            <Flex className="s-flex-hide">{person.location}</Flex>
+          )}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex

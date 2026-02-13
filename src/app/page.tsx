@@ -8,11 +8,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 
 export default function Home() {
   return (
-    <Column
-      fillWidth
-      horizontal="center"
-      vertical="center"
-    >
+    <Column fillWidth horizontal="center" vertical="center">
       <Schema
         as="webPage"
         baseURL={baseURL}

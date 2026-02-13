@@ -13,53 +13,55 @@ import {
 import { MorphingText } from "./MorphingText";
 
 // Counter animation component
-const AnimatedCounter = React.memo(({
-  end,
-  duration = 2000,
-  suffix = "",
-}: {
-  end: number;
-  duration?: number;
-  suffix?: string;
-}) => {
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+const AnimatedCounter = React.memo(
+  ({
+    end,
+    duration = 2000,
+    suffix = "",
+  }: {
+    end: number;
+    duration?: number;
+    suffix?: string;
+  }) => {
+    const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    if (hasAnimated) return;
-    
-    let startTime: number | null = null;
-    let animationFrame: number;
+    useEffect(() => {
+      if (hasAnimated) return;
 
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
+      let startTime: number | null = null;
+      let animationFrame: number;
 
-      setCount(Math.floor(progress * end));
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
 
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      } else {
-        setHasAnimated(true);
-      }
-    };
+        setCount(Math.floor(progress * end));
 
-    animationFrame = requestAnimationFrame(animate);
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        } else {
+          setHasAnimated(true);
+        }
+      };
 
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [end, duration, hasAnimated]);
+      animationFrame = requestAnimationFrame(animate);
 
-  return (
-    <>
-      {count}
-      {suffix}
-    </>
-  );
-});
+      return () => {
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+        }
+      };
+    }, [end, duration, hasAnimated]);
+
+    return (
+      <>
+        {count}
+        {suffix}
+      </>
+    );
+  },
+);
 
 export function HeroSection() {
   return (
@@ -86,7 +88,7 @@ export function HeroSection() {
             top: "10%",
             left: "5%",
             zIndex: 3,
-            animationDelay: "0s"
+            animationDelay: "0s",
           }}
         >
           <RevealFx translateY="20" delay={0.2}>
@@ -116,7 +118,7 @@ export function HeroSection() {
             top: "15%",
             right: "5%",
             zIndex: 3,
-            animationDelay: "0.8s"
+            animationDelay: "0.8s",
           }}
         >
           <RevealFx translateY="20" delay={0.8}>
@@ -148,7 +150,7 @@ export function HeroSection() {
             top: "40%",
             left: "8%",
             zIndex: 3,
-            animationDelay: "1s"
+            animationDelay: "1s",
           }}
         >
           <RevealFx translateY="20" delay={1}>
@@ -180,7 +182,7 @@ export function HeroSection() {
             top: "40%",
             right: "10%",
             zIndex: 3,
-            animationDelay: "1.2s"
+            animationDelay: "1.2s",
           }}
         >
           <RevealFx translateY="20" delay={1.2}>
@@ -212,7 +214,7 @@ export function HeroSection() {
             bottom: "18%",
             left: "12%",
             zIndex: 3,
-            animationDelay: "1.4s"
+            animationDelay: "1.4s",
           }}
         >
           <RevealFx translateY="20" delay={1.4}>
@@ -244,7 +246,7 @@ export function HeroSection() {
             bottom: "15%",
             right: "8%",
             zIndex: 3,
-            animationDelay: "2s"
+            animationDelay: "2s",
           }}
         >
           <RevealFx translateY="20" delay={2}>
@@ -276,11 +278,7 @@ export function HeroSection() {
           style={{ position: "relative", zIndex: 2 }}
         >
           {/* Animated greeting */}
-          <RevealFx
-            translateY="8"
-            fillWidth
-            horizontal="center"
-          >
+          <RevealFx translateY="8" fillWidth horizontal="center">
             <Text
               variant="heading-default-l"
               onBackground="neutral-medium"
@@ -295,12 +293,7 @@ export function HeroSection() {
           </RevealFx>
 
           {/* Large bold centered title with morphing text */}
-          <RevealFx
-            translateY="4"
-            delay={0.1}
-            fillWidth
-            horizontal="center"
-          >
+          <RevealFx translateY="4" delay={0.1} fillWidth horizontal="center">
             <Heading
               wrap="balance"
               align="center"
@@ -313,7 +306,13 @@ export function HeroSection() {
               }}
             >
               <MorphingText
-                texts={["RAMLA", "STRATEGIST", "CREATOR", "BUILDER", "STORYTELLER"]}
+                texts={[
+                  "RAMLA",
+                  "STRATEGIST",
+                  "CREATOR",
+                  "BUILDER",
+                  "STORYTELLER",
+                ]}
                 initialDelay={5000}
                 style={{
                   fontSize: "inherit",
@@ -439,7 +438,8 @@ export function HeroSection() {
 
         /* Floating animation for badges */
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0px);
           }
           50% {

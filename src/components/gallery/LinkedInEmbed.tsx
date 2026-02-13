@@ -6,7 +6,10 @@ interface LinkedInEmbedProps {
 
 export function LinkedInEmbed({ url }: LinkedInEmbedProps) {
   return (
-    <div className="gallery-item" style={{ breakInside: "avoid", marginBottom: "var(--static-space-16)" }}>
+    <div
+      className="gallery-item"
+      style={{ breakInside: "avoid", marginBottom: "var(--static-space-16)" }}
+    >
       <iframe
         src={url}
         width="100%"
