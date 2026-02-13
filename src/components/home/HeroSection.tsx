@@ -69,15 +69,15 @@ export function HeroSection() {
         gap="m"
         style={{
           position: "relative",
-          height: "100%",
+          minHeight: "calc(100vh - 160px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          overflow: "hidden",
+          overflow: "visible",
           padding: "2rem 1rem",
         }}
       >
-        {/* Floating Badges */}
+        {/* Floating Badges - Reduced to 6 key badges */}
         {/* Top Left */}
         <div
           className="floating-badge"
@@ -108,66 +108,6 @@ export function HeroSection() {
           </RevealFx>
         </div>
 
-        {/* Top Center Left */}
-        <div
-          className="floating-badge"
-          style={{
-            position: "absolute",
-            top: "8%",
-            left: "25%",
-            zIndex: 3,
-            animationDelay: "0.4s"
-          }}
-        >
-          <RevealFx translateY="20" delay={0.4}>
-            <Badge
-              background="accent-alpha-weak"
-              paddingX="s"
-              paddingY="s"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              style={{
-                transform: "rotate(5deg)",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                border: "2px solid var(--accent-border-strong)",
-              }}
-            >
-              CONTENT LEAD
-            </Badge>
-          </RevealFx>
-        </div>
-
-        {/* Top Center Right */}
-        <div
-          className="floating-badge"
-          style={{
-            position: "absolute",
-            top: "12%",
-            right: "20%",
-            zIndex: 3,
-            animationDelay: "0.6s"
-          }}
-        >
-          <RevealFx translateY="20" delay={0.6}>
-            <Badge
-              background="brand-alpha-weak"
-              paddingX="s"
-              paddingY="s"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              style={{
-                transform: "rotate(-3deg)",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                border: "2px solid var(--brand-border-strong)",
-              }}
-            >
-              ENTHUSIAST
-            </Badge>
-          </RevealFx>
-        </div>
-
         {/* Top Right */}
         <div
           className="floating-badge"
@@ -181,10 +121,10 @@ export function HeroSection() {
         >
           <RevealFx translateY="20" delay={0.8}>
             <Badge
-              background="accent-strong"
+              background="accent-alpha-weak"
               paddingX="s"
               paddingY="s"
-              onBackground="accent-strong"
+              onBackground="neutral-strong"
               textVariant="label-default-s"
               style={{
                 transform: "rotate(7deg)",
@@ -193,9 +133,9 @@ export function HeroSection() {
                 border: "2px solid var(--accent-border-strong)",
               }}
             >
-              🎮 GAMING
+              PROJECT
               <br />
-              YOUTUBER
+              MANAGER
             </Badge>
           </RevealFx>
         </div>
@@ -205,7 +145,7 @@ export function HeroSection() {
           className="floating-badge"
           style={{
             position: "absolute",
-            top: "45%",
+            top: "40%",
             left: "8%",
             zIndex: 3,
             animationDelay: "1s"
@@ -284,70 +224,6 @@ export function HeroSection() {
               textVariant="label-default-s"
               style={{
                 transform: "rotate(-5deg)",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                border: "2px solid var(--accent-border-strong)",
-              }}
-            >
-              DIGITAL
-              <br />
-              MARKETER
-            </Badge>
-          </RevealFx>
-        </div>
-
-        {/* Bottom Center Left */}
-        <div
-          className="floating-badge"
-          style={{
-            position: "absolute",
-            bottom: "12%",
-            left: "28%",
-            zIndex: 3,
-            animationDelay: "1.6s"
-          }}
-        >
-          <RevealFx translateY="20" delay={1.6}>
-            <Badge
-              background="neutral-alpha-weak"
-              paddingX="s"
-              paddingY="s"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              style={{
-                transform: "rotate(3deg)",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                border: "2px solid var(--neutral-border-strong)",
-              }}
-            >
-              CONTENT
-              <br />
-              STRATEGY
-            </Badge>
-          </RevealFx>
-        </div>
-
-        {/* Bottom Center Right */}
-        <div
-          className="floating-badge"
-          style={{
-            position: "absolute",
-            bottom: "10%",
-            right: "25%",
-            zIndex: 3,
-            animationDelay: "1.8s"
-          }}
-        >
-          <RevealFx translateY="20" delay={1.8}>
-            <Badge
-              background="accent-alpha-weak"
-              paddingX="s"
-              paddingY="s"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              style={{
-                transform: "rotate(-4deg)",
                 fontSize: "0.75rem",
                 fontWeight: 600,
                 border: "2px solid var(--accent-border-strong)",
@@ -576,11 +452,16 @@ export function HeroSection() {
           animation: float 3s ease-in-out infinite;
         }
 
-        /* Hide only middle floating badges on mobile and tablet, keep top 4 and bottom 4 */
-        @media (max-width: 1024px) {
+        /* Hide extra badges on mobile, show only 4 key badges */
+        @media (max-width: 768px) {
+          .floating-badge {
+            display: none;
+          }
+          .floating-badge:nth-child(1),
+          .floating-badge:nth-child(2),
           .floating-badge:nth-child(5),
           .floating-badge:nth-child(6) {
-            display: none;
+            display: block;
           }
         }
       `}</style>

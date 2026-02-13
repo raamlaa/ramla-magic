@@ -54,3 +54,51 @@
 }*/
 
 /* Custom styles */
+
+/* Compact home layout support */
+[data-home-compact="true"] {
+  --page-padding-y: 0;
+}
+
+[data-home-compact="true"] main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Adjust header/footer for compact home */
+[data-home-compact="true"] header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--neutral-alpha-weak);
+  backdrop-filter: blur(12px);
+}
+
+[data-home-compact="true"] footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--neutral-alpha-weak);
+  backdrop-filter: blur(12px);
+}
+
+/* Gallery hover behavior: when *an image* is hovered,
+   all others go gray; default state is full color. */
+.gallery-grid .gallery-image {
+  transition: filter 200ms ease-out, transform 200ms ease-out;
+}
+
+/* When any item is hovered, dim all images */
+.gallery-grid:has(.gallery-item:hover) .gallery-image {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+/* But keep the hovered image in full color and slightly larger */
+.gallery-grid .gallery-item:hover .gallery-image {
+  filter: none;
+  transform: scale(1.02);
+}

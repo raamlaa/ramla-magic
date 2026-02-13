@@ -1,34 +1,26 @@
 "use client";
 
-import Masonry from "react-masonry-css";
 import { Media } from "@once-ui-system/core";
 import styles from "./Gallery.module.scss";
-// import { gallery } from "@/resources";
+import { gallery } from "@/resources";
 
 export default function MasonryGrid() {
-  const breakpointColumnsObj = {
-    default: 2,
-    720: 1,
-  };
-
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className={styles.masonryGrid}
-      columnClassName={styles.masonryGridColumn}
-    >
-      {/* {gallery.images.map((image, index) => (
-        <Media
-          priority={index < 10}
-          sizes="(max-width: 560px) 100vw, 50vw"
-          key={index}
-          radius="m"
-          aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
-          src={image.src}
-          alt={image.alt}
-          className={styles.gridItem}
-        />
-      ))} */}
-    </Masonry>
+    <div className={styles.carouselContainer}>
+      <div className={styles.carousel}>
+        {gallery.images.map((image, index) => (
+          <div key={index} className={styles.carouselItem}>
+            <Media
+              priority={index < 10}
+              sizes="(max-width: 768px) 80vw, 50vw"
+              radius="m"
+              src={image.src}
+              alt={image.alt}
+              className={styles.carouselImage}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

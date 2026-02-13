@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Project Manager & Content Strategist",
+  role: "Creative Technologist",
   avatar: "/images/avatar.jpg",
   email: "ramlaazouni@outlook.com",
   location: "Africa/Tunis", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -90,7 +90,7 @@ const about = {
     experiences: [
       {
         company: "Raffiti Media",
-        timeframe: "10/2025 - Present",
+        timeframe: "10/2025 - 11/2025",
         role: "Strategist",
         achievements: [
           <>
@@ -300,55 +300,66 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-// const gallery = {
-//   path: "/gallery",
-//   label: "Gallery",
-//   title: `Photo gallery – ${person.name}`,
-//   description: `A photo collection by ${person.name}`,
-//   // Images by https://lorant.one
-//   // These are placeholder images, replace with your own
-//   images: [
-//     {
-//       src: "/images/gallery/horizontal-1.jpg",
-//       alt: "image",
-//       orientation: "horizontal",
-//     },
-//     {
-//       src: "/images/gallery/horizontal-2.jpg",
-//       alt: "image",
-//       orientation: "horizontal",
-//     },
-//     {
-//       src: "/images/gallery/horizontal-3.jpg",
-//       alt: "image",
-//       orientation: "horizontal",
-//     },
-//     {
-//       src: "/images/gallery/horizontal-4.jpg",
-//       alt: "image",
-//       orientation: "horizontal",
-//     },
-//     {
-//       src: "/images/gallery/vertical-1.jpg",
-//       alt: "image",
-//       orientation: "vertical",
-//     },
-//     {
-//       src: "/images/gallery/vertical-2.jpg",
-//       alt: "image",
-//       orientation: "vertical",
-//     },
-//     {
-//       src: "/images/gallery/vertical-3.jpg",
-//       alt: "image",
-//       orientation: "vertical",
-//     },
-//     {
-//       src: "/images/gallery/vertical-4.jpg",
-//       alt: "image",
-//       orientation: "vertical",
-//     },
-//   ],
-// };
+const gallery = {
+  path: "/gallery",
+  label: "Gallery",
+  title: `Photo gallery – ${person.name}`,
+  description: `A photo collection by ${person.name}`,
+  // type: "image" (default) | "instagram" | "linkedin"
+  // For instagram: provide the post URL
+  // For linkedin: provide the post URL
+  items: [
+    {
+      type: "image",
+      src: "/images/gallery/KoussayBiz.png",
+      alt: "KoussayBiz content",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/Koussaybiz-badhabits.png",
+      alt: "KoussayBiz bad habits",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/Bali 1.png",
+      alt: "Bali",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/aburob-lie.jpg",
+      alt: "Aburob content",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/ramla-post1.png",
+      alt: "Ramla post 1",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/ramla-post2.png",
+      alt: "Ramla post 2",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/ramla-tawa.png",
+      alt: "Ramla at TAWA",
+    },
+    {
+      type: "image",
+      src: "/images/gallery/instagram-qatar.jpg",
+      alt: "Ramla at Visit Qatar",
+      instagramUrl: "https://www.instagram.com/p/DUasVMlCM2J/",
+    },
+    // LinkedIn embed example — replace with your actual post URL:
+    // {
+    //   type: "linkedin",
+    //   url: "https://www.linkedin.com/embed/feed/update/urn:li:share:YOUR_POST_ID",
+    // },
+  ],
+  // keep images for backward compat
+  get images() {
+    return this.items.filter((i) => i.type === "image" || !i.type);
+  },
+};
 
-export { person, social, newsletter, home, about, blog, work };
+export { person, social, newsletter, home, about, blog, work, gallery };

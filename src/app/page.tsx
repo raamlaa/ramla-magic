@@ -10,10 +10,6 @@ export default function Home() {
   return (
     <Column
       fillWidth
-      style={{
-        maxHeight: "calc(100vh - 160px)", // Subtract header + footer height
-        overflow: "hidden"
-      }}
       horizontal="center"
       vertical="center"
     >

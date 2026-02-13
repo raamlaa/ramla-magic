@@ -1,14 +1,47 @@
-.masonryGrid {
-    display: flex;
-    margin-left: calc(-1 * var(--static-space-16));
+.carouselContainer {
     width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neutral-border-medium) transparent;
+    
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--neutral-border-medium);
+        border-radius: 4px;
+        
+        &:hover {
+            background-color: var(--neutral-border-strong);
+        }
+    }
 }
 
-.masonryGridColumn {
-    padding-left: var(--static-space-16);
-    background-clip: padding-box;
+.carousel {
+    display: flex;
+    gap: var(--static-space-16);
+    padding: var(--static-space-16) 0;
+    width: fit-content;
 }
 
-.gridItem {
-    margin-bottom: var(--static-space-16);
+.carouselItem {
+    flex-shrink: 0;
+    max-width: 600px;
+    
+    @media (max-width: 768px) {
+        max-width: 80vw;
+    }
+}
+
+.carouselImage {
+    width: 100%;
+    height: auto;
+    display: block;
 }

@@ -10,7 +10,10 @@ export function Projects({ range }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+    return (
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
+    );
   });
 
   const displayedProjects = range
@@ -25,7 +28,13 @@ export function Projects({ range }: ProjectsProps) {
           <Heading as="h2" variant="display-strong-s" marginBottom="s">
             Projects
           </Heading>
-          <Grid columns="2" mobileColumns="1" tabletColumns="2" fillWidth gap="l">
+          <Grid
+            columns="2"
+            mobileColumns="1"
+            tabletColumns="2"
+            fillWidth
+            gap="l"
+          >
             {displayedProjects.map((post, index) => (
               <ProjectCard
                 priority={index < 2}
@@ -36,13 +45,14 @@ export function Projects({ range }: ProjectsProps) {
                 description={post.metadata.summary}
                 content={post.content}
                 avatars={
-                  post.metadata.team?.map((member) => ({ src: member.avatar })) ||
-                  []
+                  post.metadata.team?.map((member) => ({
+                    src: member.avatar,
+                  })) || []
                 }
                 link={post.metadata.link || ""}
                 category={post.metadata.tag}
                 tags={post.metadata.tags}
-                comparison={false}
+                comparison={post.metadata.comparison || false}
               />
             ))}
           </Grid>

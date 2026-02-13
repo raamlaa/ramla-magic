@@ -13,7 +13,7 @@ export function MorphingText({
   texts,
   className = "",
   style = {},
-  initialDelay = 3000,
+  initialDelay = 2000,
 }: MorphingTextProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -39,8 +39,8 @@ export function MorphingText({
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % textsLength);
         setIsAnimating(false);
-      }, 500);
-    }, 3000);
+      }, 400);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [textsLength, hasStarted]);

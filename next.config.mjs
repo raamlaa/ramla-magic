@@ -20,6 +20,15 @@ const nextConfig = {
         hostname: "media.licdn.com",
         pathname: "/dms/image/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "chatgpt.com",
+        pathname: "/backend-api/**",
+      },
     ],
   },
   // Performance optimizations
