@@ -105,7 +105,9 @@ export function Companies() {
             text-align: center;
             filter: grayscale(1);
             opacity: 0.72;
-            transition: opacity 0.3s ease, filter 0.3s ease,
+            transition:
+              opacity 0.3s ease,
+              filter 0.3s ease,
               transform 0.3s ease;
           }
 
