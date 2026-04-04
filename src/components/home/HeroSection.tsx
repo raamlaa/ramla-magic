@@ -11,6 +11,7 @@ import {
 } from "@once-ui-system/core";
 
 import { MorphingText } from "./MorphingText";
+import { Companies } from "./Companies";
 
 // Counter animation component
 const AnimatedCounter = React.memo(
@@ -401,41 +402,12 @@ export function HeroSection() {
             </Flex>
           </RevealFx>
 
-          {/* CTA */}
-          <RevealFx translateY="4" delay={0.5} horizontal="center">
-            <a
-              href="https://cal.com/raamlaa/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <Flex
-                paddingX="32"
-                paddingY="16"
-                radius="m"
-                background="brand-strong"
-                style={{
-                  transition: "all 0.3s ease",
-                  cursor: "pointer",
-                  display: "inline-flex",
-                }}
-                className="cta-button"
-              >
-                <Text variant="label-default-l" onBackground="brand-strong">
-                  LET'S TALK →
-                </Text>
-              </Flex>
-            </a>
-          </RevealFx>
+          {/* Brands and Projects Section */}
+          <Companies />
         </Column>
       </Column>
 
       <style jsx global>{`
-        .cta-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
         /* Floating animation for badges */
         @keyframes float {
           0%,
