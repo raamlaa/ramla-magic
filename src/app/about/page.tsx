@@ -190,7 +190,7 @@ export default function About() {
                           variant="secondary"
                         />
                       </React.Fragment>
-                    )
+                    ),
                 )}
               </Flex>
             )}
@@ -264,7 +264,7 @@ export default function About() {
                           >
                             {achievement}
                           </Text>
-                        )
+                        ),
                       )}
                     </Column>
                     {Array.isArray(experience.images) &&
