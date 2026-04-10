@@ -89,6 +89,48 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: (
+          <a href="https://8flamez.co/" target="_blank" rel="noopener noreferrer">
+            8Flamez
+          </a>
+        ),
+        timeframe: "11/2025 - Present",
+        role: "Operations Manager",
+        achievements: [
+          <>
+            Led end-to-end operations across Kings League events, managing logistics, schedules, and execution in high-pressure, live environments
+          </>,
+          <>
+            Coordinated cross-functionally with league organizers, production teams, and stakeholders to ensure seamless match-day operations
+          </>,
+          <>
+          Managed travel, accommodation, and on-ground logistics for players and team across international events
+          </>,
+
+          <>
+          Built internal systems and workflows to track operations, budgets, and reporting, improving team efficiency and visibility
+          </>,
+
+          <>
+          Handled real-time problem solving and crisis management without disrupting execution
+          </>,
+        ],
+        images: [
+          {
+            src:"/images/brazil/kl.png",
+            alt: "Kings League Event",
+            width: 16,
+            height: 9,
+          },
+          {
+            src:"/images/brazil/kl-badge.jpg",
+            alt: "Kings League Event",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
         company: "Raffiti Media",
         timeframe: "10/2025 - 11/2025",
         role: "Strategist",
@@ -309,26 +351,7 @@ const gallery = {
   // For instagram: provide the post URL
   // For linkedin: provide the post URL
   items: [
-    {
-      type: "image",
-      src: "/images/gallery/KoussayBiz.png",
-      alt: "KoussayBiz content",
-    },
-    {
-      type: "image",
-      src: "/images/gallery/Koussaybiz-badhabits.png",
-      alt: "KoussayBiz bad habits",
-    },
-    {
-      type: "image",
-      src: "/images/gallery/Bali 1.png",
-      alt: "Bali",
-    },
-    {
-      type: "image",
-      src: "/images/gallery/aburob-lie.jpg",
-      alt: "Aburob content",
-    },
+    
     {
       type: "image",
       src: "/images/gallery/ramla-post1.png",
@@ -349,6 +372,86 @@ const gallery = {
       src: "/images/gallery/instagram-qatar.jpg",
       alt: "Ramla at Visit Qatar",
       instagramUrl: "https://www.instagram.com/p/DUasVMlCM2J/",
+    },
+    {
+      type: "image",
+      src: "/images/qatar/IMG_2811.png (2).jpg",
+      alt: "Ramla in Qatar",
+    },
+    {
+      type: "image",
+      src: "/images/qatar/IMG_3017.png",
+      alt: "Qatar moment",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/IMG-20250228-WA0009.jpg",
+      alt: "TAWA team moment",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/IMG-20250228-WA0044.jpg",
+      alt: "TAWA behind the scenes",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/IMG_20250123_154235.jpg",
+      alt: "Ramla at TAWA event",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/IMG_20250404_185543.jpg",
+      alt: "TAWA work session",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/IMG_20250529_114021.jpg",
+      alt: "TAWA day-in-the-life",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/WhatsApp Image 2025-11-10 at 14.01.16_ca301e0e.jpg",
+      alt: "TAWA collaboration moment",
+    },
+    {
+      type: "image",
+      src: "/images/tawa/WhatsApp Image 2025-11-13 at 5.15.55 PM.jpeg",
+      alt: "TAWA team capture",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/ramla-brazil.png",
+      alt: "Ramla in Brazil",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/2206.jpg",
+      alt: "Brazil memory",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/IMG_0359.JPG",
+      alt: "Brazil street moment",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/IMG_0370.JPG",
+      alt: "Brazil behind the scenes",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/IMG_1555.jpg",
+      alt: "Brazil creator moment",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/kl.png",
+      alt: "Kings League Brazil",
+    },
+    {
+      type: "image",
+      src: "/images/brazil/kl-badge.jpg",
+      alt: "Kings League badge",
     },
     // LinkedIn embed example — replace with your actual post URL:
     // {

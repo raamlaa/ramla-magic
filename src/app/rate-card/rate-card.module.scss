@@ -1,0 +1,195 @@
+@use "../../components/breakpoints.scss" as breakpoints;
+
+.balance {
+  text-wrap: balance;
+}
+
+.hero,
+.section,
+.finalCta,
+.detailsPanel {
+  border: 1px solid var(--neutral-alpha-medium);
+  border-radius: 2rem;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-background) 92%, white),
+      color-mix(in srgb, var(--page-background) 96%, white)
+    );
+  box-shadow: 0 18px 60px rgba(10, 18, 40, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.hero {
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--brand-background-strong) 18%, transparent), transparent 34%),
+    radial-gradient(circle at bottom left, color-mix(in srgb, var(--accent-background-strong) 16%, transparent), transparent 34%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-background) 94%, white),
+      color-mix(in srgb, var(--page-background) 96%, white)
+    );
+}
+
+.section {
+  padding: clamp(1.25rem, 2.4vw, 2rem);
+}
+
+.sectionHeader {
+  margin-bottom: 1.25rem;
+  max-width: 42rem;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pillarCard,
+.offerCard,
+.detailCard,
+.proofItem {
+  border: 1px solid var(--neutral-alpha-medium);
+  background: color-mix(in srgb, var(--surface-background) 88%, white);
+  backdrop-filter: blur(14px);
+}
+
+.pillarCard {
+  padding: 1.25rem;
+  border-radius: 1.4rem;
+}
+
+.offersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.offerCard {
+  padding: 1.35rem;
+  border-radius: 1.5rem;
+  height: 100%;
+}
+
+.offerCardFeatured {
+  position: relative;
+  border-color: color-mix(in srgb, var(--brand-border-strong) 78%, white);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--brand-border-strong) 35%, transparent),
+    0 22px 60px rgba(27, 92, 255, 0.14);
+}
+
+.popularBadge {
+  background: color-mix(in srgb, var(--brand-background-strong) 24%, transparent);
+}
+
+.includesList {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.proofStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.proofItem {
+  padding: 1rem 1.1rem;
+  border-radius: 1.25rem;
+}
+
+.detailsPanel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.detailsSummary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.2rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--neutral-on-background-strong);
+}
+
+.detailsSummary::-webkit-details-marker {
+  display: none;
+}
+
+.detailsSummary::after {
+  content: "+";
+  float: right;
+  color: var(--brand-on-background-strong);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.detailsPanel[open] .detailsSummary::after {
+  content: "-";
+}
+
+.detailsBody {
+  padding: 0 1.35rem 1.35rem;
+  border-top: 1px solid var(--neutral-alpha-medium);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detailCard {
+  padding: 1rem;
+  border-radius: 1.25rem;
+}
+
+.finalCta {
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--brand-background-strong) 14%, transparent), transparent 32%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-background) 92%, white),
+      color-mix(in srgb, var(--page-background) 96%, white)
+    );
+}
+
+@media (max-width: breakpoints.$m) {
+  .pillarsGrid,
+  .offersGrid,
+  .proofStrip,
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .finalCta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: breakpoints.$s) {
+  .hero,
+  .section,
+  .finalCta,
+  .detailsPanel {
+    border-radius: 1.5rem;
+  }
+
+  .pillarCard,
+  .offerCard,
+  .detailCard,
+  .proofItem {
+    border-radius: 1.1rem;
+  }
+}

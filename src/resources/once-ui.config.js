@@ -9,6 +9,7 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/gallery": true,
+  "/rate-card": true,
   "/studio": true,
 };
 
