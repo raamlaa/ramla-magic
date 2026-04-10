@@ -369,12 +369,6 @@ const gallery = {
     },
     {
       type: "image",
-      src: "/images/gallery/instagram-qatar.jpg",
-      alt: "Ramla at Visit Qatar",
-      instagramUrl: "https://www.instagram.com/p/DUasVMlCM2J/",
-    },
-    {
-      type: "image",
       src: "/images/qatar/IMG_2811.png (2).jpg",
       alt: "Ramla in Qatar",
     },
